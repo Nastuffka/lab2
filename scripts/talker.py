@@ -4,7 +4,7 @@ from std_msgs.msg import String
 
 rospy.init_node('talker')
 pub = rospy.Publisher('my_chat_topic', String, queue_size=10)
-rate = rospy.Rate(1)
+rate = rospy.Rate(10)
 
 def start_talker():
     msg = String()
