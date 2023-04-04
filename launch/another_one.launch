@@ -1,0 +1,12 @@
+<launch>
+	<arg name="new_topic_name" default="new_ch" />
+	<include file="$(find lab2)/launch/my_first.launch">
+		<arg name="new_topic_name" value="$(arg new_topic_name)" />
+	</include>
+	
+	<group ns="new_ns">	
+		<node name="listener_cpp" pkg="roscpp_tutorials" type="listener" output="screen">
+			<remap from="chatter" to="$(arg new_topic_name)"/>
+		</node>
+	</group>
+</launch>

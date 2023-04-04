@@ -1,0 +1,7 @@
+<launch>
+	
+	<node name="Summing" pkg="lab2" type="summing.py" output="screen" />
+
+	<node name="Polynominal" pkg="lab2" type="polynominal.py" output="screen" />
+
+</launch>

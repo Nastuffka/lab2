@@ -1,0 +1,12 @@
+<launch>
+	<arg name="new_topic_name"/>
+	<group ns="new_ns">
+		
+		<node name="receiver" pkg="lab2" type="l_even_numbers.py" output="screen">
+			<remap from="chat_topic_en" to="$(arg new_topic_name)"/>
+		</node>
+		<node name="sender" pkg="lab2" type="t_even_numbers.py" output="screen">
+			<remap from="chat_topic_en" to="$(arg new_topic_name)"/>
+		</node>
+	</group>
+</launch>
